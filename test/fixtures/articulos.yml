@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  descripcion: MyString
+  duracion: 1
+  estado: false
+
+two:
+  nombre: MyString
+  descripcion: MyString
+  duracion: 1
+  estado: false

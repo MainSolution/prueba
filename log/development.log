@@ -1,0 +1,485 @@
+  [1m[36m (133.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (153.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsuarios (20141031162015)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "usuarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "apellido" varchar(255), "telefono" integer, "correo" varchar(255), "nick" varchar(255), "contrasena" varchar(255), "sexo" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (26.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141031162015"]]
+  [1m[35m (105.1ms)[0m  commit transaction
+Migrating to CreateCategoria (20141031162241)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "categoria" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "cant" integer, "descripcion" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141031162241"]]
+  [1m[35m (128.8ms)[0m  commit transaction
+Migrating to CreateArticulos (20141031162738)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "articulos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "descripcion" varchar(255), "duracion" integer, "estado" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141031162738"]]
+  [1m[35m (119.6ms)[0m  commit transaction
+Migrating to CreateOferta (20141031162901)
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "oferta" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "contenido" varchar(255), "precio" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141031162901"]]
+  [1m[35m (97.5ms)[0m  commit transaction
+Migrating to CreateComentarios (20141031163208)
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.1ms)[0m  CREATE TABLE "comentarios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "contenido" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20141031163208"]]
+  [1m[35m (130.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-31 16:09:53 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/railties-4.1.4/lib/rails/templates/rails/welcome/index.html.erb (37.5ms)
+Completed 200 OK in 320ms (Views: 245.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ofertas/new" for 127.0.0.1 at 2014-10-31 16:11:27 -0300
+
+ActionController::RoutingError (No route matches [GET] "/ofertas/new"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (125.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (507.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:11:39 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (12.5ms)
+  Rendered oferta/new.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 50ms
+
+SyntaxError (C:/Users/Juan/Desktop/Bestnid/app/views/oferta/_form.html.erb:3: syntax error, unexpected ')'
+...ed: true, numericality: true, );@output_buffer.safe_append='
+...                               ^
+C:/Users/Juan/Desktop/Bestnid/app/views/oferta/_form.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;@output_buffer.to_s
+             ^
+C:/Users/Juan/Desktop/Bestnid/app/views/oferta/_form.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Juan/Desktop/Bestnid/app/views/oferta/_form.html.erb:12: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/oferta/_form.html.erb:3: syntax error, unexpected ')'
+  app/views/oferta/_form.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+  app/views/oferta/_form.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/oferta/_form.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+  app/views/oferta/new.html.erb:3:in `_app_views_oferta_new_html_erb___1047951050_26788284'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (222.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:12:04 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (12.5ms)
+  Rendered oferta/new.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 55ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26558664'
+  app/views/oferta/new.html.erb:3:in `_app_views_oferta_new_html_erb___1047951050_26788284'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (147.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:12:25 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (12.5ms)
+  Rendered oferta/new.html.erb within layouts/application (27.5ms)
+Completed 500 Internal Server Error in 68ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @ofertas do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26607288'
+  app/views/oferta/new.html.erb:3:in `_app_views_oferta_new_html_erb___1047951050_26788284'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (145.0ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:13:05 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (10.0ms)
+  Rendered oferta/new.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 48ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26706456'
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (150.0ms)
+
+
+Started GET "/oferta" for 127.0.0.1 at 2014-10-31 16:13:30 -0300
+
+ActionController::RoutingError (No route matches [GET] "/oferta"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (267.5ms)
+
+
+Started GET "/oferta/show" for 127.0.0.1 at 2014-10-31 16:13:37 -0300
+Processing by OfertaController#show as HTML
+  Rendered oferta/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46973ms (Views: 46970.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/oferta/index" for 127.0.0.1 at 2014-10-31 16:14:24 -0300
+Processing by OfertaController#index as HTML
+  Rendered oferta/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1163ms (Views: 1160.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/articulos.css?body=1" for 127.0.0.1 at 2014-10-31 16:14:25 -0300
+
+
+Started GET "/assets/oferta.css?body=1" for 127.0.0.1 at 2014-10-31 16:14:26 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-31 16:14:26 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:26 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:26 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:27 -0300
+
+
+Started GET "/assets/oferta.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:27 -0300
+
+
+Started GET "/assets/articulos.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:27 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-31 16:14:27 -0300
+
+
+Started GET "/oferta/index/new" for 127.0.0.1 at 2014-10-31 16:14:28 -0300
+
+ActionController::RoutingError (No route matches [GET] "/oferta/index/new"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (20.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (15.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (687.5ms)
+
+
+Started GET "/oferta/index/new" for 127.0.0.1 at 2014-10-31 16:14:41 -0300
+
+ActionController::RoutingError (No route matches [GET] "/oferta/index/new"):
+  actionpack (4.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.4) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.4) lib/rails/engine.rb:514:in `call'
+  railties (4.1.4) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  C:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (302.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:14:46 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (25.0ms)
+  Rendered oferta/new.html.erb within layouts/application (62.5ms)
+Completed 500 Internal Server Error in 123ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26706456'
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (315.0ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:15:41 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (10.0ms)
+  Rendered oferta/new.html.erb within layouts/application (25.0ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26706456'
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (150.0ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:16:04 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (12.5ms)
+  Rendered oferta/new.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26706456'
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (165.0ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:16:33 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (10.0ms)
+  Rendered oferta/new.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @oferta do |f| %>
+    2: <%= f.label :precio %> </br>
+    3:  <%= f.number_field :precio, required: true, numericality: true %>
+    4:  </br>
+  app/views/oferta/_form.html.erb:1:in `_app_views_oferta__form_html_erb___630205601_26706456'
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (147.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:17:13 -0300
+Processing by OfertaController#new as HTML
+Completed 500 Internal Server Error in 218ms
+
+NoMethodError (undefined method `arity' for :articulo:Symbol):
+  app/models/oferta.rb:2:in `<class:Oferta>'
+  app/models/oferta.rb:1:in `<top (required)>'
+  app/controllers/oferta_controller.rb:15:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (250.0ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:17:40 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (225.0ms)
+  Rendered oferta/new.html.erb within layouts/application (237.5ms)
+Completed 200 OK in 780ms (Views: 755.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/articulos.css?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/oferta.css?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/articulos.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/oferta.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-31 16:17:42 -0300
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:22:07 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (5.0ms)
+  Rendered oferta/new.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 43ms
+
+SyntaxError (C:/Users/Juan/Desktop/Bestnid/app/views/oferta/_form.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...e, placeholder: ¿Cuánto está dispuesto a pagar por el pro...
+...                               ^):
+  app/views/oferta/_form.html.erb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/views/oferta/new.html.erb:2:in `_app_views_oferta_new_html_erb___1047951050_26388648'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.5ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-4.1.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (207.5ms)
+
+
+Started GET "/oferta/new" for 127.0.0.1 at 2014-10-31 16:22:24 -0300
+Processing by OfertaController#new as HTML
+  Rendered oferta/_form.html.erb (15.0ms)
+  Rendered oferta/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 770ms (Views: 765.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/articulos.css?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/oferta.css?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/articulos.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:25 -0300
+
+
+Started GET "/assets/oferta.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:26 -0300
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-31 16:22:26 -0300

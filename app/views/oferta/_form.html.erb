@@ -1,0 +1,9 @@
+<%= form_for @oferta do |f| %>
+<%= f.label :precio %> </br>
+ <%= f.number_field :precio, required: true, numericality: true, placeholder: "¿Cuánto está dispuesto a pagar por el producto?" %>
+ </br>
+ <%= f.label :Oferta %> </br>
+ <%= f.text_area :contenido, required: true, placeholder: "¿Por qué desea este producto?" %>
+
+ <%= f.submit 'Enviar', class: 'btn btn-primary' %>
+<% end %>
